@@ -1,0 +1,173 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Demo Contribution Payment | Pension Website</title>
+    <link rel="stylesheet" href="payment.css">
+    <link rel="stylesheet"
+          href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+</head>
+<body>
+
+<header class="navbar">
+    <a href="Home.html" class="logo">Pension<span>Plan</span></a>
+
+    <nav>
+        <a href="Home.html">Home</a>
+        <a href="about.html">About</a>
+        <a href="services.html">Services</a>
+        <a href="Contact.html">Contact</a>
+    </nav>
+</header>
+
+<main class="payment-container">
+    <section class="payment-heading">
+        <span class="eyebrow">CONTRIBUTION PORTAL</span>
+        <h1>Make a <span>Contribution</span></h1>
+        <p>Complete this demonstration form to see how an online pension contribution process could work.</p>
+    </section>
+
+    <div class="demo-alert">
+        <i class="fas fa-triangle-exclamation"></i>
+        <div>
+            <strong>DEMO MODE ONLY</strong>
+            <p>This page does not process real payments or transfer money.</p>
+        </div>
+    </div>
+
+    <section class="payment-card">
+        <form id="paymentForm">
+
+            <h2><i class="fas fa-user"></i> Customer Information</h2>
+
+            <div class="form-grid">
+                <div class="form-group">
+                    <label for="customerName">Full Name</label>
+                    <input type="text" id="customerName"
+                           placeholder="Enter your full name" required>
+                </div>
+
+                <div class="form-group">
+                    <label for="customerEmail">Email Address</label>
+                    <input type="email" id="customerEmail"
+                           placeholder="Enter your email" required>
+                </div>
+
+                <div class="form-group">
+                    <label for="customerPhone">Phone Number</label>
+                    <input type="tel" id="customerPhone"
+                           placeholder="Enter your phone number" required>
+                </div>
+
+                <div class="form-group">
+                    <label for="product">Select Pension Product</label>
+                    <select id="product" required>
+                        <option value="PPP">Personal Pension Plan (PPP)</option>
+                        <option value="AVC">Additional Voluntary Contributions (AVC)</option>
+                        <option value="Dollar Pension">Dollar Pension Plan</option>
+                        <option value="RSA">Retirement Savings Account (RSA)</option>
+                    </select>
+                </div>
+            </div>
+
+            <h2><i class="fas fa-wallet"></i> Contribution Details</h2>
+
+            <div class="form-grid">
+                <div class="form-group">
+                    <label for="currency">Currency</label>
+                    <select id="currency">
+                        <option value="NGN">Nigerian Naira (₦)</option>
+                        <option value="USD">US Dollar ($)</option>
+                    </select>
+                </div>
+
+                <div class="form-group">
+                    <label for="amount">Contribution Amount</label>
+                    <input type="number" id="amount"
+                           min="1" step="0.01"
+                           placeholder="Enter amount" required>
+                </div>
+
+                <div class="form-group">
+                    <label for="frequency">Contribution Frequency</label>
+                    <select id="frequency">
+                        <option value="One-time">One-time</option>
+                        <option value="Weekly">Weekly</option>
+                        <option value="Monthly">Monthly</option>
+                        <option value="Yearly">Yearly</option>
+                    </select>
+                </div>
+            </div>
+
+            <div class="summary">
+                <h3>Contribution Summary</h3>
+                <div class="summary-line">
+                    <span>Selected Product</span>
+                    <strong id="summaryProduct">PPP</strong>
+                </div>
+                <div class="summary-line">
+                    <span>Frequency</span>
+                    <strong id="summaryFrequency">One-time</strong>
+                </div>
+                <div class="summary-line total">
+                    <span>Demo Amount</span>
+                    <strong id="summaryAmount">₦0.00</strong>
+                </div>
+            </div>
+
+            <div class="privacy-note">
+                <i class="fas fa-lock"></i>
+                We do not ask for your bank password, card PIN, pension portal password or OTP.
+            </div>
+
+            <button type="submit" class="pay-button" id="simulateButton">
+                <i class="fas fa-credit-card"></i> Simulate Payment
+            </button>
+
+            <p class="small-print">
+                By continuing, you acknowledge that this is a demonstration only.
+                No actual payment or pension contribution will be made.
+            </p>
+        </form>
+
+        <section id="receipt" class="receipt" hidden>
+            <div class="receipt-success">
+                <i class="fas fa-circle-check"></i>
+                <h2>Demo Payment Successful!</h2>
+                <p>This is a simulated transaction, not a real payment.</p>
+            </div>
+
+            <div class="receipt-details">
+                <div><span>Demo Reference</span><strong id="receiptReference"></strong></div>
+                <div><span>Customer</span><strong id="receiptName"></strong></div>
+                <div><span>Email</span><strong id="receiptEmail"></strong></div>
+                <div><span>Product</span><strong id="receiptProduct"></strong></div>
+                <div><span>Frequency</span><strong id="receiptFrequency"></strong></div>
+                <div><span>Amount</span><strong id="receiptAmount"></strong></div>
+                <div><span>Date</span><strong id="receiptDate"></strong></div>
+                <div><span>Status</span><strong class="demo-status">DEMO ONLY</strong></div>
+            </div>
+
+            <div class="receipt-actions">
+                <button type="button" id="printReceipt">
+                    <i class="fas fa-print"></i> Print Receipt
+                </button>
+                <button type="button" id="newPayment">
+                    Make Another Demo Payment
+                </button>
+            </div>
+        </section>
+    </section>
+</main>
+
+<footer>
+    <p>&copy; 2026 PensionPlan. Educational website demonstration.</p>
+    <p>This website is not an official Stanbic IBTC payment portal.</p>
+</footer>
+
+<script src="payment.js"></script>
+</body>
+</html>
+    

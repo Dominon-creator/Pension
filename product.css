@@ -1,0 +1,508 @@
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+html {
+    scroll-behavior: smooth;
+}
+
+body {
+    font-family: 'Poppins', sans-serif;
+    color: #17243b;
+    background: #fff;
+    line-height: 1.7;
+}
+
+:root {
+    --navy: #071b49;
+    --blue: #104d94;
+    --gold: #e5b83f;
+    --white: #fff;
+    --light: #f4f7fc;
+    --text: #5c687b;
+}
+
+a {
+    text-decoration: none;
+}
+
+/* NAVIGATION */
+
+.navbar {
+    width: 100%;
+    min-height: 85px;
+    padding: 15px 7%;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    background: var(--navy);
+    position: sticky;
+    top: 0;
+    z-index: 1000;
+    box-shadow: 0 4px 15px rgba(0,0,0,.12);
+}
+
+.logo {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    color: var(--white);
+    font-size: 21px;
+    font-weight: 700;
+}
+
+.logo img {
+    width: 45px;
+    height: 45px;
+    object-fit: contain;
+}
+
+.gold {
+    color: var(--gold);
+}
+
+.navbar nav {
+    display: flex;
+    gap: 28px;
+}
+
+.navbar nav a {
+    color: white;
+    font-size: 14px;
+    transition: .3s;
+}
+
+.navbar nav a:hover,
+.navbar nav a.active {
+    color: var(--gold);
+}
+
+.nav-btn {
+    background: var(--gold);
+    color: var(--navy);
+    padding: 11px 22px;
+    border-radius: 5px;
+    font-size: 13px;
+    font-weight: 600;
+    transition: .3s;
+}
+
+.nav-btn:hover {
+    background: white;
+    transform: translateY(-3px);
+}
+
+/* HERO */
+
+.product-hero {
+    min-height: 570px;
+    padding: 80px 7%;
+    display: grid;
+    grid-template-columns: 1.1fr .9fr;
+    align-items: center;
+    gap: 50px;
+    background: linear-gradient(120deg, #071b49, #104d94);
+    color: white;
+    overflow: hidden;
+}
+
+.hero-content {
+    animation: fadeUp 1s ease;
+}
+
+.eyebrow,
+.section-heading span {
+    color: var(--gold);
+    font-size: 12px;
+    font-weight: 700;
+    letter-spacing: 2px;
+}
+
+.hero-content h1 {
+    font-size: clamp(36px, 5vw, 60px);
+    line-height: 1.2;
+    margin: 20px 0;
+}
+
+.hero-content h1 span {
+    color: var(--gold);
+    display: block;
+}
+
+.hero-content p {
+    max-width: 570px;
+    color: #e0e9f8;
+    font-size: 15px;
+    margin-bottom: 30px;
+}
+
+.hero-image img {
+    width: 100%;
+    max-height: 380px;
+    object-fit: cover;
+    border-radius: 15px;
+    box-shadow: 0 20px 45px rgba(0,0,0,.25);
+    animation: float 4s ease-in-out infinite;
+}
+
+.hero-buttons {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 15px;
+}
+
+.primary-btn,
+.secondary-btn {
+    display: inline-block;
+    padding: 13px 25px;
+    border-radius: 5px;
+    font-size: 13px;
+    font-weight: 600;
+    transition: .3s;
+}
+
+.primary-btn {
+    background: var(--gold);
+    color: var(--navy);
+}
+
+.secondary-btn {
+    color: white;
+    border: 1px solid rgba(255,255,255,.7);
+}
+
+.primary-btn:hover,
+.secondary-btn:hover {
+    transform: translateY(-4px);
+}
+
+/* INTRODUCTION */
+
+.product-intro {
+    padding: 90px 12%;
+    text-align: center;
+}
+
+.section-heading {
+    text-align: center;
+    margin-bottom: 35px;
+}
+
+.section-heading span {
+    color: var(--blue);
+}
+
+.section-heading h2 {
+    color: var(--navy);
+    font-size: clamp(25px, 3vw, 37px);
+    margin-top: 10px;
+}
+
+.product-intro > p {
+    max-width: 850px;
+    margin: auto;
+    color: var(--text);
+    font-size: 15px;
+}
+
+/* BENEFITS */
+
+.benefits-section {
+    background: var(--light);
+    padding: 90px 7%;
+}
+
+.section-heading > p {
+    color: var(--text);
+    font-size: 14px;
+    margin-top: 10px;
+}
+
+.benefit-grid {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 22px;
+}
+
+.benefit-card {
+    padding: 32px 23px;
+    background: white;
+    border-radius: 10px;
+    text-align: center;
+    box-shadow: 0 8px 25px rgba(7,27,73,.06);
+    transition: .4s;
+}
+
+.benefit-card:hover {
+    transform: translateY(-10px);
+    box-shadow: 0 15px 30px rgba(7,27,73,.12);
+}
+
+.benefit-card i {
+    font-size: 35px;
+    color: var(--blue);
+    margin-bottom: 20px;
+}
+
+.benefit-card h3 {
+    color: var(--navy);
+    font-size: 17px;
+    margin-bottom: 12px;
+}
+
+.benefit-card p {
+    font-size: 13px;
+    color: var(--text);
+}
+
+/* HOW IT WORKS */
+
+.how-section {
+    padding: 90px 7%;
+}
+
+.steps-grid {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 20px;
+}
+
+.step-card {
+    padding: 30px 20px;
+    border: 1px solid #e4eaf3;
+    border-radius: 10px;
+    position: relative;
+    transition: .3s;
+}
+
+.step-card:hover {
+    border-color: var(--gold);
+    transform: translateY(-7px);
+}
+
+.step-number {
+    font-size: 35px;
+    color: #dce5f1;
+    font-weight: 800;
+}
+
+.step-card i {
+    display: block;
+    font-size: 28px;
+    color: var(--blue);
+    margin: 15px 0;
+}
+
+.step-card h3 {
+    font-size: 17px;
+    color: var(--navy);
+    margin-bottom: 10px;
+}
+
+.step-card p {
+    font-size: 13px;
+    color: var(--text);
+}
+
+/* CONTRIBUTION */
+
+.contribution-section {
+    padding: 80px 9%;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    align-items: center;
+    gap: 50px;
+    background: var(--light);
+}
+
+.contribution-content h2 {
+    font-size: 35px;
+    color: var(--navy);
+    margin: 15px 0;
+}
+
+.contribution-content p {
+    font-size: 14px;
+    color: var(--text);
+    margin-bottom: 25px;
+}
+
+.contribution-image img {
+    width: 100%;
+    height: 340px;
+    object-fit: cover;
+    border-radius: 12px;
+}
+
+/* GET STARTED */
+
+.get-started {
+    text-align: center;
+    padding: 90px 7%;
+    background: var(--navy);
+    color: white;
+}
+
+.get-started h2 {
+    font-size: clamp(25px, 4vw, 38px);
+    max-width: 750px;
+    margin: 15px auto;
+}
+
+.get-started p {
+    color: #d4dfef;
+    font-size: 14px;
+    margin-bottom: 25px;
+}
+
+/* FOOTER */
+
+.footer {
+    background: #04122f;
+    color: white;
+    padding: 45px 7% 20px;
+    text-align: center;
+}
+
+.footer h2 {
+    margin-bottom: 10px;
+}
+
+.footer p {
+    font-size: 13px;
+    color: #c6d0e0;
+}
+
+.footer-links {
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+    gap: 25px;
+    margin: 25px 0;
+}
+
+.footer-links a {
+    color: white;
+    font-size: 13px;
+}
+
+.footer-links a:hover {
+    color: var(--gold);
+}
+
+.copyright {
+    border-top: 1px solid rgba(255,255,255,.15);
+    padding-top: 20px;
+    margin-top: 25px;
+}
+
+/* ANIMATIONS */
+
+@keyframes fadeUp {
+    from {
+        opacity: 0;
+        transform: translateY(30px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+@keyframes float {
+    0%, 100% {
+        transform: translateY(0);
+    }
+    50% {
+        transform: translateY(-12px);
+    }
+}
+
+/* RESPONSIVE DESIGN */
+
+@media (max-width: 1000px) {
+    .benefit-grid,
+    .steps-grid {
+        grid-template-columns: repeat(2, 1fr);
+    }
+
+    .product-hero {
+        gap: 30px;
+    }
+}
+
+@media (max-width: 700px) {
+    .navbar {
+        padding: 15px 5%;
+        flex-wrap: wrap;
+        gap: 15px;
+    }
+
+    .navbar nav {
+        order: 3;
+        width: 100%;
+        justify-content: center;
+        gap: 15px;
+        flex-wrap: wrap;
+    }
+
+    .navbar nav a {
+        font-size: 12px;
+    }
+
+    .nav-btn {
+        padding: 9px 13px;
+        font-size: 11px;
+    }
+
+    .product-hero {
+        grid-template-columns: 1fr;
+        padding: 65px 7%;
+    }
+
+    .hero-image {
+        margin-top: 15px;
+    }
+
+    .benefit-grid,
+    .steps-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .product-intro,
+    .benefits-section,
+    .how-section {
+        padding: 65px 7%;
+    }
+
+    .contribution-section {
+        grid-template-columns: 1fr;
+        padding: 65px 7%;
+    }
+
+    .contribution-content h2 {
+        font-size: 28px;
+    }
+
+    .contribution-image img {
+        height: 250px;
+    }
+
+    .get-started {
+        padding: 65px 7%;
+    }
+}
+
+@media (prefers-reduced-motion: reduce) {
+    *,
+    *::before,
+    *::after {
+        animation-duration: .01ms !important;
+        animation-iteration-count: 1 !important;
+        scroll-behavior: auto !important;
+        transition-duration: .01ms !important;
+    }
+}
